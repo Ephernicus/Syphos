@@ -1,0 +1,36 @@
+/* applies to entire website */
+* {
+    background-color: #131313;
+    color: white;
+    font-family: "Afacad", serif;
+}
+
+/* font customization */
+.afacad-font {
+    font-family: "Afacad", serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+  }
+
+  /* spacing of everything */
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+}
+
+/* textbox */
+textarea {
+    background-color: transparent;
+    border: none;
+    outline: none;
+    resize: none;
+    height: 80vh;
+    width: 60vh;
+    font-size: 2rem;
+    overflow: hidden; 
+}
+
