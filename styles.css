@@ -22,6 +22,11 @@ body {
     margin: 0;
 }
 
+/* initially hides the writing page */
+#writing-page {
+    display: none;
+}
+
 /* textbox */
 textarea {
     background-color: transparent;
@@ -32,5 +37,14 @@ textarea {
     width: 60vh;
     font-size: 2rem;
     overflow: hidden; 
+    z-index: 0;
 }
 
+/* handles all buttons that lead to writing page */
+.begin-button {
+    background-color: red;
+}
+
+.begin-button:hover {
+    background-color: blue;
+}
