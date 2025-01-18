@@ -2,6 +2,7 @@
 * {
     background-color: #131313;
     color: white;
+    overflow: hidden;
     font-family: "Afacad", serif;
 }
 
@@ -12,6 +13,22 @@
     font-weight: 400;
     font-style: normal;
   }
+
+  /* header */
+  header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: transparent;
+    color: white;
+    padding: 10px, 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1;
+}
+
 
   /* spacing of everything */
 body {
@@ -40,11 +57,23 @@ textarea {
     z-index: 0;
 }
 
+/* word count */
+#word-count {
+    position: fixed; 
+    bottom: 10px;
+    text-align: center;
+    padding: 10px;
+    color: #838383;
+}
+
 /* handles all buttons that lead to writing page */
 .begin-button {
-    background-color: red;
+    background-color: #232323;
+    border: transparent;
+    border-radius: 10px;
+    padding: 20px, 20px;
 }
 
 .begin-button:hover {
-    background-color: blue;
+    background-color: #333333;
 }
