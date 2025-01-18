@@ -28,28 +28,28 @@ let timeElapsed = 0;
 function clearTextAfterInactivity() {
     console.log('Clearing text due to inactivity');
     textarea.value = ''; // Clear the text in the textarea
-    textarea.style.color = ''; // Reset the text color
+    textarea.style.color = 'rgb(255, 255, 255)'; // Reset the text color to white
     updateWordCount(); // Update the word count to reflect the cleared text
     clearInterval(colorInterval); // Stop the color interval
 }
 
 function resetInactivityTimer() {
     clearTimeout(inactivityTimer); // Clear any existing timer
-    clearInterval(colorInterval); // Clear any existing color change interval
+    clearInterval(colorInterval); // Stop any ongoing color change
     startColorChange(); // Start changing the color
-    inactivityTimer = setTimeout(clearTextAfterInactivity, 15000); // Set a new 15-second timer
+    inactivityTimer = setTimeout(clearTextAfterInactivity, 10000); // Set a new 10-second timer
 }
 
 function startColorChange() {
     timeElapsed = 0; // Reset time elapsed
-    textarea.style.color = ''; // Reset the text color
+    textarea.style.color = 'rgb(255, 255, 255)'; // Start text color as white
 
     // Start the interval to change text color
     colorInterval = setInterval(() => {
-        timeElapsed += 100; // Increment time elapsed (in milliseconds)
-        const progress = Math.min(timeElapsed / 15000, 1); // Calculate progress (0 to 1)
-        const redValue = Math.floor(255 * progress); // Gradually increase red component
-        textarea.style.color = `rgb(${redValue}, 0, 0)`; // Set color to gradually change to red
+        timeElapsed += 100; // Increment time elapsed by 100ms
+        const progress = Math.min(timeElapsed / 10000, 1); // Progress from 0 to 1 over 10 seconds
+        const greenAndBlueValue = Math.floor(255 * (1 - progress)); // Gradually reduce green and blue
+        textarea.style.color = `rgb(255, ${greenAndBlueValue}, ${greenAndBlueValue})`; // Update the text color
 
         if (progress === 1) {
             clearInterval(colorInterval); // Stop interval when fully red
