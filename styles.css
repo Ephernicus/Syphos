@@ -66,7 +66,7 @@ textarea {
     color: #838383;
 }
 
-/* handles all buttons that lead to writing page */
+/* styles landing page buttons that lead to modes */
 .begin-button {
     background-color: #232323;
     border: transparent;
@@ -76,4 +76,55 @@ textarea {
 
 .begin-button:hover {
     background-color: #333333;
+}
+
+
+/* Toolbar container */
+#toolBar {
+    position: fixed; /* Fixes the toolbar in place */
+    right: 10px; /* Distance from the right edge of the screen */
+    top: 50%; /* Start vertically in the center */
+    transform: translateY(-50%); /* Center toolbar vertically */
+    display: flex; /* Use flexbox for alignment */
+    flex-direction: column; /* Stack buttons vertically */
+    gap: 10px; /* Add spacing between buttons */
+}
+
+/* styles all toolbar buttons */
+.toolbar-button {
+    width: 40px; 
+    height: 40px; 
+    background: url('settings-icon.png') no-repeat center center; /* Add PNG */
+    background-size: contain; /* Ensure the image fits */
+    border: none; /* Remove default border */
+    cursor: pointer; /* Add pointer cursor for interactivity */
+    outline: none; /* Remove focus outline */
+    text-indent: -9999px; /* Hide the text "settings" */
+    overflow: hidden; /* Prevent text from displaying */
+}
+
+/* add hover effect for all buttons */
+.toolbar-button:hover {
+    transform: scale(1.1); /* Slightly enlarge on hover */
+    background-color: rgba(0, 0, 0, 0.1); /* Optional background highlight */
+}
+
+/* icons for each toolbar button */
+#settingsButton {
+    background-image: url('icons/settings.png');
+}
+#pauseButton {
+    background-image: url('icons/pause.png');
+}
+#zoomButton {
+    background-image: url('icons/zoom.png');
+}
+#themeButton {
+    background-image: url('icons/theme.png');
+}
+#fontButton {
+    background-image: url('icons/font.png');
+}
+#musicButton {
+    background-image: url('icons/music.png');
 }
