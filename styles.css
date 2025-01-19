@@ -78,6 +78,26 @@ textarea {
     background-color: #333333;
 }
 
+#mode-buttons, #selection-menu {
+    text-align: center;
+}
+
+#mode-buttons button, #beginButton {
+    margin: 10px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+#selection-menu input[type="range"], #goal-word-input {
+    margin: 10px 0;
+    width: 200px;
+}
+
+#selection-menu span {
+    font-weight: bold;
+}
+
 
 /* Toolbar container */
 #toolBar {
@@ -94,19 +114,19 @@ textarea {
 .toolbar-button {
     width: 40px; 
     height: 40px; 
-    background: url('settings-icon.png') no-repeat center center; /* Add PNG */
+    background: url('empty.png') no-repeat center center; /* Add PNG */
     background-size: contain; /* Ensure the image fits */
     border: none; /* Remove default border */
     cursor: pointer; /* Add pointer cursor for interactivity */
     outline: none; /* Remove focus outline */
     text-indent: -9999px; /* Hide the text "settings" */
     overflow: hidden; /* Prevent text from displaying */
+    filter: invert(1);
 }
 
 /* add hover effect for all buttons */
 .toolbar-button:hover {
     transform: scale(1.1); /* Slightly enlarge on hover */
-    background-color: rgba(0, 0, 0, 0.1); /* Optional background highlight */
 }
 
 /* icons for each toolbar button */
@@ -128,3 +148,5 @@ textarea {
 #musicButton {
     background-image: url('icons/music.png');
 }
+
+
