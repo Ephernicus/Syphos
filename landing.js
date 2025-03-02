@@ -8,6 +8,7 @@ const backButtonA = document.getElementById('back-button-a');
 const backButtonB = document.getElementById('back-button-b');
 const modeAStart = document.getElementById('begin-button-a');
 const modeBStart = document.getElementById('begin-button-b');
+const hoverMessage = document.getElementById('hover-message');
 
 // open mode A selection menu
 modeAButton.addEventListener('click', () => {
@@ -15,15 +16,18 @@ modeAButton.addEventListener('click', () => {
     selectionMenuA.style.display = 'block'; // Show selection menu A
 });
 
-// selection menu a back button
-backButtonA.addEventListener('click', () => {
-    selectionMenuA.style.display = 'none'; // Hide Mode A menu
-    modeButtons.style.display = 'block'; // Show landing page buttons
+// Display message when hovering over Mode A start
+modeAButton.addEventListener('mouseenter', () => {
+    hoverMessage.textContent = "Starting Mode A";
+    hoverMessage.style.visibility = 'visible';
+});
+modeAButton.addEventListener('mouseleave', () => {
+    hoverMessage.style.visibility = 'hidden';
 });
 
-// selection menu b back button
-backButtonB.addEventListener('click', () => {
-    selectionMenuA.style.display = 'none'; // Hide Mode B menu
+// selection menu A back button
+backButtonA.addEventListener('click', () => {
+    selectionMenuA.style.display = 'none'; // Hide Mode A menu
     modeButtons.style.display = 'block'; // Show landing page buttons
 });
 
@@ -36,22 +40,42 @@ idleTimeSlider.addEventListener('input', () => {
     idleTimeDisplay.textContent = idleTimeSlider.value; // Update the displayed value
 });
 
+// navigate to mode A
+modeAStart.addEventListener('click', () => {
+    const idleTime = idleTimeSlider.value; // Get the slider value
+    sessionStorage.setItem('idleTime', idleTime);
+    window.location.href = 'modeA.html';
+});
+
+
+
+
+
+
+// selection menu b back button
+backButtonB.addEventListener('click', () => {
+    selectionMenuB.style.display = 'none'; // Hide Mode B menu
+    modeButtons.style.display = 'block'; // Show landing page buttons
+});
+
+// Display message when hovering over Mode B start
+modeBButton.addEventListener('mouseenter', () => {
+    hoverMessage.textContent = "Starting Mode B";
+    hoverMessage.style.visibility = 'visible';
+});
+modeBButton.addEventListener('mouseleave', () => {
+    hoverMessage.style.visibility = 'hidden';
+});
+
 // open mode B selection menu
 modeBButton.addEventListener('click', () => {
     modeButtons.style.display = 'none'; // Hide mode buttons
     selectionMenuB.style.display = 'block'; // Show selection menu B
 });
 
-// navigate to mode A
-modeAStart.addEventListener('click', () => {
-    const idleTime = idleTimeSlider.value; // Get the slider value
-    sessionStorage.setItem('idleTime', idleTime);
-    window.location.href = 'modeA.html'; 
-
-});
 // navigate to mode B
 modeBStart.addEventListener('click', () => {
-    window.location.href = 'modeB.html'; 
+    window.location.href = 'modeB.html';
 });
 
 

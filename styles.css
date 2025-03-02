@@ -12,10 +12,10 @@
     font-optical-sizing: auto;
     font-weight: 400;
     font-style: normal;
-  }
+}
 
-  /* header */
-  header {
+/* header */
+header {
     position: fixed;
     top: 0;
     left: 0;
@@ -30,7 +30,7 @@
 }
 
 
-  /* spacing of everything */
+/* spacing of everything */
 body {
     display: flex;
     align-items: center;
@@ -53,43 +53,52 @@ textarea {
     height: 80vh;
     width: 60vh;
     font-size: 2rem;
-    overflow: hidden; 
+    overflow: hidden;
     z-index: 0;
 }
 
 /* word count */
 #word-count {
-    position: fixed; 
+    position: fixed;
     bottom: 10px;
     text-align: center;
     padding: 10px;
     color: #838383;
 }
 
+#landing-page {
+    position: relative;
+    text-align: center;
+  }
+
 /* styles landing page buttons that lead to modes */
-.begin-button {
-    background-color: #232323;
-    border: transparent;
-    border-radius: 10px;
-    padding: 20px, 20px;
+.landing-button:hover {
+    transform: scale(1.1);
 }
 
-.begin-button:hover {
-    background-color: #333333;
+/* hover message for modes */
+#hover-message {
+    text-align: center;
+    font-size: 1.5em;
+    z-index: 10;
+    color: #ffffff;
 }
 
-#mode-buttons, #selection-menu {
+#mode-buttons,
+#selection-menu {
     text-align: center;
 }
 
-#mode-buttons button, #beginButton {
+#mode-buttons button,
+#beginButton {
     margin: 10px;
     padding: 10px 20px;
     font-size: 16px;
     cursor: pointer;
 }
 
-#selection-menu input[type="range"], #goal-word-input {
+#selection-menu input[type="range"],
+#goal-word-input {
     margin: 10px 0;
     width: 200px;
 }
@@ -101,52 +110,70 @@ textarea {
 
 /* Toolbar container */
 #toolBar {
-    position: fixed; /* Fixes the toolbar in place */
-    right: 10px; /* Distance from the right edge of the screen */
-    top: 50%; /* Start vertically in the center */
-    transform: translateY(-50%); /* Center toolbar vertically */
-    display: flex; /* Use flexbox for alignment */
-    flex-direction: column; /* Stack buttons vertically */
-    gap: 10px; /* Add spacing between buttons */
+    position: fixed;
+    /* Fixes the toolbar in place */
+    right: 10px;
+    /* Distance from the right edge of the screen */
+    top: 50%;
+    /* Start vertically in the center */
+    transform: translateY(-50%);
+    /* Center toolbar vertically */
+    display: flex;
+    /* Use flexbox for alignment */
+    flex-direction: column;
+    /* Stack buttons vertically */
+    gap: 10px;
+    /* Add spacing between buttons */
 }
 
 /* styles all toolbar buttons */
 .toolbar-button {
-    width: 40px; 
-    height: 40px; 
-    background: url('empty.png') no-repeat center center; /* Add PNG */
-    background-size: contain; /* Ensure the image fits */
-    border: none; /* Remove default border */
-    cursor: pointer; /* Add pointer cursor for interactivity */
-    outline: none; /* Remove focus outline */
-    text-indent: -9999px; /* Hide the text "settings" */
-    overflow: hidden; /* Prevent text from displaying */
+    width: 40px;
+    height: 40px;
+    background: url('empty.png') no-repeat center center;
+    /* Add PNG */
+    background-size: contain;
+    /* Ensure the image fits */
+    border: none;
+    /* Remove default border */
+    cursor: pointer;
+    /* Add pointer cursor for interactivity */
+    outline: none;
+    /* Remove focus outline */
+    text-indent: -9999px;
+    /* Hide the text "settings" */
+    overflow: hidden;
+    /* Prevent text from displaying */
     filter: invert(1);
 }
 
 /* add hover effect for all buttons */
 .toolbar-button:hover {
-    transform: scale(1.1); /* Slightly enlarge on hover */
+    transform: scale(1.1);
+    /* Slightly enlarge on hover */
 }
 
 /* icons for each toolbar button */
 #settingsButton {
     background-image: url('icons/settings.png');
 }
+
 #pauseButton {
     background-image: url('icons/pause.png');
 }
+
 #zoomButton {
     background-image: url('icons/zoom.png');
 }
+
 #themeButton {
     background-image: url('icons/theme.png');
 }
+
 #fontButton {
     background-image: url('icons/font.png');
 }
+
 #musicButton {
     background-image: url('icons/music.png');
 }
-
-
