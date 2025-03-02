@@ -2,6 +2,8 @@
 // const textarea = document.querySelector('textarea');
 const textarea = document.getElementById('textA');
 const wordCountDisplay = document.getElementById('word-count');
+const idleTime = sessionStorage.getItem('idleTime') || 15;
+
 
 // Function to update the word count
 function updateWordCount() {
@@ -25,6 +27,7 @@ let colorInterval;
 // Counter for color change progress
 let timeElapsed = 0;
 
+
 function clearTextAfterInactivity() {
     console.log('Clearing text due to inactivity');
     textarea.value = ''; // Clear the text in the textarea
@@ -37,7 +40,7 @@ function resetInactivityTimer() {
     clearTimeout(inactivityTimer); // Clear any existing timer
     clearInterval(colorInterval); // Stop any ongoing color change
     startColorChange(); // Start changing the color
-    inactivityTimer = setTimeout(clearTextAfterInactivity, 10000); // Set a new 10-second timer
+    inactivityTimer = setTimeout(clearTextAfterInactivity, idleTime * 1000); // Set a new 10-second timer
 }
 
 function startColorChange() {
