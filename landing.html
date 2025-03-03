@@ -22,12 +22,11 @@
     <div id="landing-page">
         <div id="hover-message"></div>
         
-        <button class="landing-button" id="modeAButton">Mode A</button>
-        <button class="landing-button" id="modeBButton">Mode B</button>
+        <button class="landing-button" id="landingButton">Start</button>
     </div>
 
-     <!-- mode A selection menu -->
-    <div id="selection-menu-a" style="display: none;">
+     <!-- selection menu -->
+    <div id="selection-menu" style="display: none;">
         <label for="idle-time-slider">Idle Time (seconds):</label>
         <input type="range" id="idle-time-slider" min="5" max="60" value="15">
         <span id="idle-time-display">15</span> seconds
@@ -39,25 +38,8 @@
         
         <br><br>
 
-        <button id="begin-button-a">Begin</button>
-        <button id="back-button-a">Back</button>
-    </div>
-
-         <!-- mode B selection menu -->
-    <div id="selection-menu-b" style="display: none;">
-        <label for="idle-time-slider">Check points:</label>
-        <input type="range" id="idle-time-slider" min="5" max="60" value="15">
-        <span id="idle-time-display">15</span>
-
-        <br><br>
-
-        <label for="goal-word-slider">Goal Word Count:</label>
-        <input type="number" id="goal-word-input" placeholder="Enter number or leave blank">
-        
-        <br><br>
-
-        <button id="begin-button-b">Begin</button>
-        <button id="back-button-b">Back</button>
+        <button id="begin-button">Begin</button>
+        <button id="back-button">Back</button>
     </div>
 
     <!-- link to javascript file -->

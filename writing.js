@@ -1,6 +1,6 @@
 // Select textarea and word count display
 // const textarea = document.querySelector('textarea');
-const textarea = document.getElementById('textA');
+const textarea = document.getElementById('text-area');
 const wordCountDisplay = document.getElementById('word-count');
 const idleTime = sessionStorage.getItem('idleTime') || 15;
 

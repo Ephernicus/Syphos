@@ -71,12 +71,12 @@ textarea {
     text-align: center;
   }
 
-/* styles landing page buttons that lead to modes */
+/* styles landing page buttons that lead to writing page */
 .landing-button:hover {
     transform: scale(1.1);
 }
 
-/* hover message for modes */
+/* loading page hover message */
 #hover-message {
     text-align: center;
     font-size: 1.5em;
@@ -141,7 +141,7 @@ textarea {
     outline: none;
     /* Remove focus outline */
     text-indent: -9999px;
-    /* Hide the text "settings" */
+    /* Hide the text */
     overflow: hidden;
     /* Prevent text from displaying */
     filter: invert(1);
@@ -154,10 +154,6 @@ textarea {
 }
 
 /* icons for each toolbar button */
-#settingsButton {
-    background-image: url('icons/settings.png');
-}
-
 #pauseButton {
     background-image: url('icons/pause.png');
 }

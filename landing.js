@@ -1,34 +1,29 @@
 // landing page constants
-const modeAButton = document.getElementById('modeAButton');
-const modeBButton = document.getElementById('modeBButton');
-const modeButtons = document.getElementById('landing-page');
-const selectionMenuA = document.getElementById('selection-menu-a');
-const selectionMenuB = document.getElementById('selection-menu-b');
-const backButtonA = document.getElementById('back-button-a');
-const backButtonB = document.getElementById('back-button-b');
-const modeAStart = document.getElementById('begin-button-a');
-const modeBStart = document.getElementById('begin-button-b');
+const landingButton = document.getElementById('landing-page');
+const selectionMenu = document.getElementById('selection-menu');
+const backButton = document.getElementById('back-button');
+const writingStart = document.getElementById('begin-button');
 const hoverMessage = document.getElementById('hover-message');
 
-// open mode A selection menu
-modeAButton.addEventListener('click', () => {
-    modeButtons.style.display = 'none'; // Hide mode buttons
-    selectionMenuA.style.display = 'block'; // Show selection menu A
+// open  selection menu
+landingButton.addEventListener('click', () => {
+    landingButton.style.display = 'none'; // Hide landing button
+    selectionMenu.style.display = 'block'; // Show selection menu 
 });
 
-// Display message when hovering over Mode A start
-modeAButton.addEventListener('mouseenter', () => {
-    hoverMessage.textContent = "Starting Mode A";
+// Display message when hovering over landing button
+landingButton.addEventListener('mouseenter', () => {
+    hoverMessage.textContent = "Let the challenge begin!";
     hoverMessage.style.visibility = 'visible';
 });
-modeAButton.addEventListener('mouseleave', () => {
+landingButton.addEventListener('mouseleave', () => {
     hoverMessage.style.visibility = 'hidden';
 });
 
-// selection menu A back button
-backButtonA.addEventListener('click', () => {
-    selectionMenuA.style.display = 'none'; // Hide Mode A menu
-    modeButtons.style.display = 'block'; // Show landing page buttons
+// selection menu back button
+backButton.addEventListener('click', () => {
+    selectionMenu.style.display = 'none'; // Hide selection menu
+    landingButton.style.display = 'block'; // Show landing page button
 });
 
 // Select the slider and display elements
@@ -40,42 +35,12 @@ idleTimeSlider.addEventListener('input', () => {
     idleTimeDisplay.textContent = idleTimeSlider.value; // Update the displayed value
 });
 
-// navigate to mode A
-modeAStart.addEventListener('click', () => {
+// navigate to writing page
+writingStart.addEventListener('click', () => {
     const idleTime = idleTimeSlider.value; // Get the slider value
     sessionStorage.setItem('idleTime', idleTime);
-    window.location.href = 'modeA.html';
+    window.location.href = 'writing.html';
 });
 
-
-
-
-
-
-// selection menu b back button
-backButtonB.addEventListener('click', () => {
-    selectionMenuB.style.display = 'none'; // Hide Mode B menu
-    modeButtons.style.display = 'block'; // Show landing page buttons
-});
-
-// Display message when hovering over Mode B start
-modeBButton.addEventListener('mouseenter', () => {
-    hoverMessage.textContent = "Starting Mode B";
-    hoverMessage.style.visibility = 'visible';
-});
-modeBButton.addEventListener('mouseleave', () => {
-    hoverMessage.style.visibility = 'hidden';
-});
-
-// open mode B selection menu
-modeBButton.addEventListener('click', () => {
-    modeButtons.style.display = 'none'; // Hide mode buttons
-    selectionMenuB.style.display = 'block'; // Show selection menu B
-});
-
-// navigate to mode B
-modeBStart.addEventListener('click', () => {
-    window.location.href = 'modeB.html';
-});
 
 
