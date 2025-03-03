@@ -177,3 +177,34 @@ textarea {
 #musicButton {
     background-image: url('icons/music.png');
 }
+
+/* Pause menu */
+#pause-menu {
+    position: center; 
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 1);  /* semi-transparent dark background */
+    color: #fff;
+    display: none;  /* hidden by default */
+    z-index: 1000;  /* ensure it's on top of everything */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+  }
+  
+  #paused-word-count text {
+    font-size: 1.5rem;
+    margin: 10px 0;
+    color: #ffffff;
+  }
+  
+  #continue-button button {
+    font-size: 1.2rem;
+    padding: 10px 20px;
+    margin-top: 20px;
+    cursor: pointer;
+    color: #ffffff;
+  }
