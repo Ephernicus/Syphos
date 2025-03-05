@@ -1,7 +1,5 @@
 /* Applies to entire website */
 * {
-    background-color: #131313;
-    color: white;
     overflow: hidden;
     font-family: "Afacad", serif;
 }
@@ -12,8 +10,7 @@
     font-family: inherit;
 }
 
-/* Default font class for writing page */
-#writing-page
+
 
 /* Alternate font options */
 #writing-page.font-1,
@@ -84,7 +81,15 @@ textarea {
     bottom: 10px;
     text-align: center;
     padding: 10px;
-    color: #838383;
+}
+
+
+/* Word goal */
+#word-goal {
+    position: fixed;
+    bottom: 10px;
+    text-align: center;
+    padding: 10px;
 }
 
 #landing-page {
@@ -236,3 +241,47 @@ textarea {
     cursor: pointer;
     color: #ffffff;
 }
+
+/* === Theme Styles === */
+
+/* Theme Styles on the Body */
+body.theme-1 {
+    background-color: #131313;
+    color: #ffffff;
+  }
+  
+  body.theme-2 {
+    background-color: #ffffff;
+    color: #000000;
+  }
+  
+  body.theme-3 {
+    background-color: #f5f5dc;
+    color: #654321;
+  }
+  
+  /* Toolbar icons adjust based on theme */
+  body.theme-1 .toolbar-button {
+    filter: invert(1);
+  }
+  body.theme-2 .toolbar-button,
+  body.theme-3 .toolbar-button {
+    filter: invert(0);
+  }
+
+
+#goal-word-input {
+    width: 50px; 
+  }
+  
+  /* Remove the up/down arrows in Chrome, Safari, Edge */
+  #goal-word-input::-webkit-inner-spin-button,
+  #goal-word-input::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+  
+  /* Remove the up/down arrows in Firefox */
+  #goal-word-input {
+    -moz-appearance: textfield;
+  }

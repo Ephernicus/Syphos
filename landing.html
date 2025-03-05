@@ -1,31 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>landing page</title>
-    
+
     <!-- Link to css file -->
     <link rel="stylesheet" href="styles.css">
 
     <!-- Import google font -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Afacad:ital,wght@0,400..700;1,400..700&family=Host+Grotesk:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Afacad:ital,wght@0,400..700;1,400..700&family=Host+Grotesk:ital,wght@0,300..800;1,300..800&display=swap"
+        rel="stylesheet">
 </head>
 
 <body>
     <header>
-        Syphos 
+        Syphos
     </header>
     <!-- Landing page -->
     <div id="landing-page">
         <div id="hover-message"></div>
-        
+
         <button class="landing-button" id="landingButton">Start</button>
     </div>
 
-     <!-- Selection menu -->
+    <!-- Selection menu -->
     <div id="selection-menu" style="display: none;">
         <label for="idle-time-slider">Idle Time (seconds):</label>
         <input type="range" id="idle-time-slider" min="5" max="60" value="15">
@@ -33,9 +36,10 @@
 
         <br><br>
 
-        <label for="goal-word-slider">Goal Word Count:</label>
-        <input type="number" id="goal-word-input" placeholder="Enter number or leave blank">
-        
+        <label for="goal-word-input">Goal Word Count:</label>
+        <input type="number" id="goal-word-input" required min="1" max="99999"
+            oninput="if(this.value.length > 5) this.value = this.value.slice(0, 5);" />
+
         <br><br>
 
         <button id="begin-button">Begin</button>
@@ -45,4 +49,5 @@
     <!-- Link to javascript file -->
     <script src="landing.js"></script>
 </body>
+
 </html>

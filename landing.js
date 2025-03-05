@@ -4,6 +4,7 @@ const selectionMenu = document.getElementById('selection-menu');
 const backButton = document.getElementById('back-button');
 const writingStart = document.getElementById('begin-button');
 const hoverMessage = document.getElementById('hover-message');
+const goalInput = document.getElementById('goal-word-input');
 
 // Open selection menu
 landingButton.addEventListener('click', () => {
@@ -33,6 +34,15 @@ const idleTimeDisplay = document.getElementById('idle-time-display');
 // Update the display when the slider value changes
 idleTimeSlider.addEventListener('input', () => {
     idleTimeDisplay.textContent = idleTimeSlider.value; // Update the displayed value
+});
+
+goalInput.addEventListener('input', function() {
+  // Remove any character that's not a digit.
+  this.value = this.value.replace(/[^0-9]/g, '');
+  // Limit to 5 digits.
+  if (this.value.length > 5) {
+    this.value = this.value.slice(0, 5);
+  }
 });
 
 // Navigate to writing page
