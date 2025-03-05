@@ -1,8 +1,10 @@
 const pauseButton = document.getElementById('pauseButton');
 const continueButton = document.getElementById('continue-button');
+const restartButton = document.getElementById('restart-button');
 const pauseMenu = document.getElementById('pause-menu');
 
-// pause writing when pause button is clicked
+
+// Pause writing when pause button is clicked
 pauseButton.addEventListener('click', () => {
     const pausedWordCount = document.getElementById('paused-word-count');
 
@@ -36,4 +38,9 @@ continueButton.addEventListener('click', () => {
 
     // Resume the inactivity timer
     resetInactivityTimer();
+});
+
+// Restart return to landing page 
+restartButton.addEventListener('click', () => {
+    window.location.href = 'landing.html';
 });

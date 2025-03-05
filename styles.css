@@ -1,4 +1,4 @@
-/* applies to entire website */
+/* Applies to entire website */
 * {
     background-color: #131313;
     color: white;
@@ -6,15 +6,37 @@
     font-family: "Afacad", serif;
 }
 
-/* font customization */
-.afacad-font {
-    font-family: "Afacad", serif;
-    font-optical-sizing: auto;
-    font-weight: 400;
-    font-style: normal;
+#writing-page,
+#writing-page textarea {
+    /* The default font, which will be overridden by the classes below */
+    font-family: inherit;
 }
 
-/* header */
+/* Default font class for writing page */
+#writing-page
+
+/* Alternate font options */
+#writing-page.font-1,
+#word-count.font-1 {
+    font-family: "Afacad", serif;
+}
+
+#writing-page.font-2,
+#word-count.font-2 {
+    font-family: "Times New Roman", serif;
+}
+
+#writing-page.font-3,
+#word-count.font-3 {
+    font-family: "Courier New", monospace;
+}
+
+#writing-page.font-4,
+#word-count.font-4 {
+    font-family: "Georgia", serif;
+}
+
+/* Header */
 header {
     position: fixed;
     top: 0;
@@ -29,8 +51,7 @@ header {
     z-index: 1;
 }
 
-
-/* spacing of everything */
+/* Spacing of everything */
 body {
     display: flex;
     align-items: center;
@@ -39,25 +60,25 @@ body {
     margin: 0;
 }
 
-/* initially hides the writing page */
+/* Initially hides the writing page */
 #writing-page {
-    display: none;
+    display: block;
 }
 
-/* textbox */
+/* Textbox */
 textarea {
     background-color: transparent;
     border: none;
     outline: none;
     resize: none;
     height: 80vh;
-    width: 60vh;
-    font-size: 2rem;
+    width: 80vh;
+    font-size: 1.5rem;
     overflow: hidden;
     z-index: 0;
 }
 
-/* word count */
+/* Word count */
 #word-count {
     position: fixed;
     bottom: 10px;
@@ -69,14 +90,14 @@ textarea {
 #landing-page {
     position: relative;
     text-align: center;
-  }
+}
 
-/* styles landing page buttons that lead to writing page */
+/* Styles landing page buttons that lead to writing page */
 .landing-button:hover {
     transform: scale(1.1);
 }
 
-/* loading page hover message */
+/* Loading page hover message */
 #hover-message {
     text-align: center;
     font-size: 1.5em;
@@ -147,13 +168,13 @@ textarea {
     filter: invert(1);
 }
 
-/* add hover effect for all buttons */
+/* Add hover effect for all buttons */
 .toolbar-button:hover {
     transform: scale(1.1);
     /* Slightly enlarge on hover */
 }
 
-/* icons for each toolbar button */
+/* Icons for each toolbar button */
 #pauseButton {
     background-image: url('icons/pause.png');
 }
@@ -176,31 +197,42 @@ textarea {
 
 /* Pause menu */
 #pause-menu {
-    position: center; 
+    position: center;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 1);  /* semi-transparent dark background */
+    background: rgba(0, 0, 0, 1);
+    /* semi-transparent dark background */
     color: #fff;
-    display: none;  /* hidden by default */
-    z-index: 1000;  /* ensure it's on top of everything */
+    display: none;
+    /* hidden by default */
+    z-index: 1000;
+    /* ensure it's on top of everything */
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     text-align: center;
     padding: 20px;
-  }
-  
-  #paused-word-count text {
+}
+
+#paused-word-count text {
     font-size: 1.5rem;
     margin: 10px 0;
     color: #ffffff;
-  }
-  
-  #continue-button button {
+}
+
+#continue-button button {
     font-size: 1.2rem;
     padding: 10px 20px;
     margin-top: 20px;
     cursor: pointer;
     color: #ffffff;
-  }
+}
+
+#reset-button button {
+    font-size: 1.2rem;
+    padding: 10px 20px;
+    margin-top: 20px;
+    cursor: pointer;
+    color: #ffffff;
+}

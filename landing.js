@@ -5,7 +5,7 @@ const backButton = document.getElementById('back-button');
 const writingStart = document.getElementById('begin-button');
 const hoverMessage = document.getElementById('hover-message');
 
-// open  selection menu
+// Open selection menu
 landingButton.addEventListener('click', () => {
     landingButton.style.display = 'none'; // Hide landing button
     selectionMenu.style.display = 'block'; // Show selection menu 
@@ -20,7 +20,7 @@ landingButton.addEventListener('mouseleave', () => {
     hoverMessage.style.visibility = 'hidden';
 });
 
-// selection menu back button
+// Selection menu back button
 backButton.addEventListener('click', () => {
     selectionMenu.style.display = 'none'; // Hide selection menu
     landingButton.style.display = 'block'; // Show landing page button
@@ -35,7 +35,7 @@ idleTimeSlider.addEventListener('input', () => {
     idleTimeDisplay.textContent = idleTimeSlider.value; // Update the displayed value
 });
 
-// navigate to writing page
+// Navigate to writing page
 writingStart.addEventListener('click', () => {
     const idleTime = idleTimeSlider.value; // Get the slider value
     sessionStorage.setItem('idleTime', idleTime);
