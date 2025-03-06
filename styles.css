@@ -179,10 +179,12 @@ textarea {
 
 #musicButton {
     background-image: url('icons/music.png');
+    opacity: 0.5;
 }
 
 #soundButton {
     background-image: url('icons/sound.png');
+    opacity: 0.5;
 }
 
 /* Icons for footer buttons */
@@ -349,11 +351,17 @@ body.theme-1 {
     background-color: #131313;
     color: #ffffff;
 }
+body.theme-1 textarea {
+    color: inherit;
+  }
 
 body.theme-2 {
     background-color: #ffffff;
     color: #000000;
 }
+body.theme-2 textarea {
+    color: inherit;
+  }
 
 body.theme-3 {
     background-image: linear-gradient(rgba(217, 198, 156, 0.5), rgba(217, 198, 156, 0.5)),
@@ -362,17 +370,18 @@ body.theme-3 {
     background-repeat: repeat;
     background-size: cover;
 }
+body.theme-3 textarea {
+    color: inherit; 
+  }
 
 /* Toolbar icons adjust based on theme */
 body.theme-1 .toolbar-button {
     filter: invert(1);
 }
-
 body.theme-2 .toolbar-button,
 body.theme-3 .toolbar-button {
     filter: invert(0);
 }
-
 
 #goal-word-input {
     width: 50px;

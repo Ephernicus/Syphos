@@ -18,6 +18,7 @@ musicButton.addEventListener('click', () => {
     audio.loop = true;
     audio.src = tracks[currentTrackIndex];
     audio.play();
+    musicButton.style.opacity = 1; 
     console.log(`Playing track 1 (looping): ${tracks[currentTrackIndex]}`);
   } else {
     // Subsequent clicks: move to the next track
@@ -33,6 +34,7 @@ musicButton.addEventListener('click', () => {
       audio.pause();
       audio.currentTime = 0;
       currentTrackIndex = -1;
+      musicButton.style.opacity = 0.5; 
       console.log('Music stopped.');
     }
   }

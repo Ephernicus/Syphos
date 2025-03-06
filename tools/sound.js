@@ -14,7 +14,7 @@ soundButton.addEventListener('click', () => {
 });
 
 // Every time the user types, play a random sound if sound is enabled
-textarea.addEventListener('input', (event) => {
+textarea.addEventListener('input', () => {
     if (!soundEnabled) return;
     // Randomize which sound file to play
     const randomIndex = Math.floor(Math.random() * soundFiles.length);
