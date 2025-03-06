@@ -17,7 +17,7 @@ let timeElapsed = 0;
 // Function to update the word count
 function updateWordCount() {
     const text = textarea.value.trim();
-    const words = text.length > 0 ? text.split(/\s+/) : [];
+    const words = text.match(/\b\w+\b/g) || [];
     wordCount = words.length; // update the wordCount variable
 
     if (wordCount >= userGoal) {

@@ -1,5 +1,5 @@
 // landing page constants
-const landingButton = document.getElementById('landing-page');
+const landingButton = document.getElementById('landingButton');
 const selectionMenu = document.getElementById('selection-menu');
 const backButton = document.getElementById('back-button');
 const writingStart = document.getElementById('begin-button');
@@ -8,23 +8,14 @@ const goalInput = document.getElementById('goal-word-input');
 
 // Open selection menu
 landingButton.addEventListener('click', () => {
-    landingButton.style.display = 'none'; // Hide landing button
-    selectionMenu.style.display = 'block'; // Show selection menu 
-});
-
-// Display message when hovering over landing button
-landingButton.addEventListener('mouseenter', () => {
-    hoverMessage.textContent = "Let the challenge begin!";
-    hoverMessage.style.visibility = 'visible';
-});
-landingButton.addEventListener('mouseleave', () => {
-    hoverMessage.style.visibility = 'hidden';
+    landingButton.style.display = 'none'; 
+    selectionMenu.style.display = 'block'; 
 });
 
 // Selection menu back button
 backButton.addEventListener('click', () => {
-    selectionMenu.style.display = 'none'; // Hide selection menu
-    landingButton.style.display = 'block'; // Show landing page button
+    selectionMenu.style.display = 'none';
+    landingButton.style.display = 'block'; 
 });
 
 // Select the slider and display elements
@@ -52,7 +43,7 @@ writingStart.addEventListener('click', () => {
 
     const goal = goalInput.value.trim() || '0';
     sessionStorage.setItem('goalWordCount', goal);
-    
+
     window.location.href = 'writing.html';
 });
 

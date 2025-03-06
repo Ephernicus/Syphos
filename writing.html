@@ -23,7 +23,7 @@
     </header>
     <!-- writing page with textbox -->
     <div id="writing-page" class="font-1">
-        <textarea id="text-area" placeholder="start typing..."></textarea>
+        <textarea id="text-area" spellcheck="false" placeholder="start typing..."></textarea>
     </div>
 
     <!-- toolbar buttons -->
@@ -33,6 +33,8 @@
         <button class="toolbar-button" id="themeButton"></button>
         <button class="toolbar-button" id="fontButton"></button>
         <button class="toolbar-button" id="musicButton"></button>
+        <button class="toolbar-button" id="soundButton"></button>
+
     </div>
 
     <!-- pause menu -->
@@ -56,6 +58,7 @@
     <!-- word count -->
     <footer>
         <button class="footer-button" id="generateButton"></button>
+        <div id="promptDisplay"></div>
         <div id="word-count">0 / 0</div>
         <button class="footer-button" id="completeButton"></button>
     </footer>
@@ -65,9 +68,11 @@
     <script src="tools/pause.js"></script>
     <script src="tools/zoom.js"></script>
     <script src="tools/theme.js"></script>
+    <script src="tools/sound.js"></script>
     <script src="tools/music.js"></script>
     <script src="tools/font.js"></script>
     <script src="tools/completion.js"></script>
+    <script src="tools/generate.js"></script>
 
 </body>
 

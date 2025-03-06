@@ -4,6 +4,15 @@
     font-family: "Afacad", serif;
 }
 
+/* Spacing of everything */
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+}
+
 #writing-page,
 #writing-page textarea {
     /* The default font, which will be overridden by the classes below */
@@ -46,15 +55,6 @@ header {
     z-index: 1;
 }
 
-/* Spacing of everything */
-body {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
-    margin: 0;
-}
-
 /* Initially hides the writing page */
 #writing-page {
     display: block;
@@ -81,28 +81,14 @@ textarea {
     padding: 10px;
 }
 
-
-footer {
-    position: fixed;
-    bottom: 10px;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    text-align: center;
-    padding: 10px;
-  }
-
 /* Styles landing page buttons that lead to writing page */
-.landing-button:hover {
-    transform: scale(1.1);
+.landing-button {
+    transform-origin: center center;
+    transition: transform 0.2s ease;
 }
 
-/* Loading page hover message */
-#hover-message {
-    text-align: center;
-    font-size: 1.5em;
-    z-index: 10;
-    color: #ffffff;
+.landing-button:hover {
+    transform: scale(1.1);
 }
 
 #mode-buttons,
@@ -195,25 +181,36 @@ footer {
     background-image: url('icons/music.png');
 }
 
+#soundButton {
+    background-image: url('icons/sound.png');
+}
+
 /* Icons for footer buttons */
 #completeButton {
     background-image: url('icons/complete.png');
 }
+
 #generateButton {
     background-image: url('icons/generate.png');
 }
 
-/* Parent footer container anchored at bottom */
+
+/* ==== Footer content formatting ==== */
 footer {
     position: fixed;
-    bottom: 0;
-    left: 0;
+    bottom: 10px;
     width: 100%;
-    height: 60px;  /* adjust as needed */
-  }
-  
-  /* Base style for both footer buttons */
-  .footer-button {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    padding: 10px;
+    height: 60px;
+    background: inherit;
+    color: inherit;
+}
+
+/* Base style for both footer buttons */
+.footer-button {
     width: 40px;
     height: 40px;
     background: url('empty.png') no-repeat center center;
@@ -224,28 +221,46 @@ footer {
     text-indent: -9999px;
     overflow: hidden;
     filter: invert(1);
-  }
-  
-  /* Position the left button */
-  #generateButton {
+    color: inherit;
+}
+
+/* Position the left button */
+#generateButton {
     position: absolute;
-    left: 10px;
+    left: 20px;
+    bottom: 2px;
+}
+
+#promptDisplay {
+    position: absolute;
+    left: 60px;
     bottom: 10px;
-  }
-  
-  /* Position the right button */
-  #completeButton {
+    opacity: 0.4;
+}
+
+/* Position the right button */
+#completeButton {
     position: absolute;
     display: none;
-    right: 28px;
-    bottom: 10px;
-  }
+    right: 20px;
+    bottom: 2px;
+}
 
 /* Add hover effect for all buttons */
 .footer-button:hover {
     transform: scale(1.1);
     /* Slightly enlarge on hover */
 }
+
+body.theme-1 .footer-button {
+    filter: invert(1);
+}
+
+body.theme-2 .footer-button,
+body.theme-3 .footer-button {
+    filter: invert(0);
+}
+
 
 /* ==== Pause Menu ==== */
 #pause-menu {
@@ -291,7 +306,7 @@ footer {
     width: 100%;
     height: 20%;
     background: transparent;
-    color: #ffffff;
+    color: inherit;
     display: none;
     z-index: 1000;
     display: flex;
@@ -333,40 +348,44 @@ footer {
 body.theme-1 {
     background-color: #131313;
     color: #ffffff;
-  }
-  
-  body.theme-2 {
+}
+
+body.theme-2 {
     background-color: #ffffff;
     color: #000000;
-  }
-  
-  body.theme-3 {
-    background-color: #f5f5dc;
-    color: #654321;
-  }
-  
-  /* Toolbar icons adjust based on theme */
-  body.theme-1 .toolbar-button {
+}
+
+body.theme-3 {
+    background-image: linear-gradient(rgba(217, 198, 156, 0.5), rgba(217, 198, 156, 0.5)),
+        url('icons/paper.png');
+    opacity: 0.65;
+    background-repeat: repeat;
+    background-size: cover;
+}
+
+/* Toolbar icons adjust based on theme */
+body.theme-1 .toolbar-button {
     filter: invert(1);
-  }
-  body.theme-2 .toolbar-button,
-  body.theme-3 .toolbar-button {
+}
+
+body.theme-2 .toolbar-button,
+body.theme-3 .toolbar-button {
     filter: invert(0);
-  }
+}
 
 
 #goal-word-input {
-    width: 50px; 
-  }
-  
-  /* Remove the up/down arrows in Chrome, Safari, Edge */
-  #goal-word-input::-webkit-inner-spin-button,
-  #goal-word-input::-webkit-outer-spin-button {
+    width: 50px;
+}
+
+/* Remove the up/down arrows in Chrome, Safari, Edge */
+#goal-word-input::-webkit-inner-spin-button,
+#goal-word-input::-webkit-outer-spin-button {
     -webkit-appearance: none;
     margin: 0;
-  }
-  
-  /* Remove the up/down arrows in Firefox */
-  #goal-word-input {
+}
+
+/* Remove the up/down arrows in Firefox */
+#goal-word-input {
     -moz-appearance: textfield;
-  }
+}
