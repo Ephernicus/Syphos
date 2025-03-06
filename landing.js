@@ -36,19 +36,23 @@ idleTimeSlider.addEventListener('input', () => {
     idleTimeDisplay.textContent = idleTimeSlider.value; // Update the displayed value
 });
 
-goalInput.addEventListener('input', function() {
-  // Remove any character that's not a digit.
-  this.value = this.value.replace(/[^0-9]/g, '');
-  // Limit to 5 digits.
-  if (this.value.length > 5) {
-    this.value = this.value.slice(0, 5);
-  }
+goalInput.addEventListener('input', function () {
+    // Remove any character that's not a digit.
+    this.value = this.value.replace(/[^0-9]/g, '');
+    // Limit to 5 digits.
+    if (this.value.length > 5) {
+        this.value = this.value.slice(0, 5);
+    }
 });
 
 // Navigate to writing page
 writingStart.addEventListener('click', () => {
     const idleTime = idleTimeSlider.value; // Get the slider value
     sessionStorage.setItem('idleTime', idleTime);
+
+    const goal = goalInput.value.trim() || '0';
+    sessionStorage.setItem('goalWordCount', goal);
+    
     window.location.href = 'writing.html';
 });
 

@@ -83,19 +83,15 @@ textarea {
     padding: 10px;
 }
 
-
-/* Word goal */
-#word-goal {
+footer {
     position: fixed;
     bottom: 10px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
     text-align: center;
     padding: 10px;
-}
-
-#landing-page {
-    position: relative;
-    text-align: center;
-}
+  }
 
 /* Styles landing page buttons that lead to writing page */
 .landing-button:hover {
@@ -158,7 +154,7 @@ textarea {
     height: 40px;
     background: url('empty.png') no-repeat center center;
     /* Add PNG */
-    background-size: contain;
+    background-size: 60%;
     /* Ensure the image fits */
     border: none;
     /* Remove default border */
@@ -202,16 +198,12 @@ textarea {
 
 /* Pause menu */
 #pause-menu {
-    position: center;
     width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 1);
-    /* semi-transparent dark background */
-    color: #fff;
+    height: 20%;
+    background: transparent;
+    color: #ffffff;
     display: none;
-    /* hidden by default */
     z-index: 1000;
-    /* ensure it's on top of everything */
     display: flex;
     flex-direction: column;
     justify-content: center;

@@ -2,25 +2,21 @@
 // Const textarea = document.querySelector('textarea');
 const textarea = document.getElementById('text-area');
 const wordCountDisplay = document.getElementById('word-count');
+const userGoal = sessionStorage.getItem('goalWordCount') || '0';
 const idleTime = sessionStorage.getItem('idleTime') || 15;
 
+let wordCount = 0;
+wordCountDisplay.textContent = `${wordCount} / ${userGoal}`;
 
 // Function to update the word count
 function updateWordCount() {
-    const text = textarea.value.trim(); // Get trimmed text from textarea
-    const words = text.length > 0 ? text.split(/\s+/) : []; // Split text into words
-    const wordCount = words.length; // Count the number of words
-    wordCountDisplay.textContent = `Word Count: ${wordCount}`; // Update the word count display
+    const text = textarea.value.trim();
+    const words = text.length > 0 ? text.split(/\s+/) : [];
 
-    // Reset inactivity timer whenever user types
+    wordCount = words.length; // update the wordCount variable
+    wordCountDisplay.textContent = `${wordCount} / ${userGoal}`;
+    
     resetInactivityTimer();
-}
-
-// Function to show goal word count 
-function displayGoal() {
-    const goalInput = document.getElementById('goal-word-input');
-    const goalDisplay = document.getElementById('word-goal');
-    goalDisplay.textContent = `Goal Word Count: ${goalInput.value}`;
 }
 
 // Add event listener to update word count when user types
@@ -32,7 +28,6 @@ let colorInterval;
 
 // Counter for color change progress
 let timeElapsed = 0;
-
 
 function clearTextAfterInactivity() {
     console.log('Clearing text due to inactivity');

@@ -12,9 +12,10 @@ pauseButton.addEventListener('click', () => {
     clearTimeout(inactivityTimer);
     clearInterval(colorInterval);
 
-    // Hide the writing elements
+    // Hide the writing elements˜
     textarea.style.display = 'none';
     wordCountDisplay.style.display = 'none';
+    toolBar.style.display = 'none';
 
     // Show the pause menu
     pauseMenu.style.display = 'block';
@@ -35,6 +36,8 @@ continueButton.addEventListener('click', () => {
     // Show the writing elements again
     textarea.style.display = 'block';
     wordCountDisplay.style.display = 'block';
+    toolBar.style.display = 'flex';
+
 
     // Resume the inactivity timer
     resetInactivityTimer();
