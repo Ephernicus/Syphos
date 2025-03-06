@@ -28,11 +28,11 @@
 
     <!-- toolbar buttons -->
     <div id="toolBar">
-        <button class="toolbar-button" id="pauseButton">pause</button>
-        <button class="toolbar-button" id="zoomButton">zoom</button>
-        <button class="toolbar-button" id="themeButton">theme</button>
-        <button class="toolbar-button" id="fontButton">font</button>
-        <button class="toolbar-button" id="musicButton">music</button>
+        <button class="toolbar-button" id="pauseButton"></button>
+        <button class="toolbar-button" id="zoomButton"></button>
+        <button class="toolbar-button" id="themeButton"></button>
+        <button class="toolbar-button" id="fontButton"></button>
+        <button class="toolbar-button" id="musicButton"></button>
     </div>
 
     <!-- pause menu -->
@@ -42,13 +42,23 @@
         <p id="paused-goal"></p>
         <button id="continue-button">Continue</button>
         <button id="restart-button">Restart</button>
-
     </div>
+
+    <!-- completion menu -->
+    <div id="completion-menu" style="display: none;">
+        <p>Amazing work! You have reached your goal.</p>
+        <button id="resume-button">Resume</button>
+        <button id="export-button">Export</button>
+        <button id="main-menu-button">Main Menu</button>
+    </div>
+
 
     <!-- word count -->
     <footer>
+        <button class="footer-button" id="generateButton"></button>
         <div id="word-count">0 / 0</div>
-      </footer>
+        <button class="footer-button" id="completeButton"></button>
+    </footer>
 
     <!-- link to javascript file -->
     <script src="writing.js"></script>
@@ -57,6 +67,8 @@
     <script src="tools/theme.js"></script>
     <script src="tools/music.js"></script>
     <script src="tools/font.js"></script>
+    <script src="tools/completion.js"></script>
+
 </body>
 
 </html>

@@ -5,29 +5,42 @@ const wordCountDisplay = document.getElementById('word-count');
 const userGoal = sessionStorage.getItem('goalWordCount') || '0';
 const idleTime = sessionStorage.getItem('idleTime') || 15;
 
+// Initialize word count
 let wordCount = 0;
 wordCountDisplay.textContent = `${wordCount} / ${userGoal}`;
+
+// Timer variables
+let inactivityTimer;
+let colorInterval;
+let timeElapsed = 0;
 
 // Function to update the word count
 function updateWordCount() {
     const text = textarea.value.trim();
     const words = text.length > 0 ? text.split(/\s+/) : [];
-
     wordCount = words.length; // update the wordCount variable
-    wordCountDisplay.textContent = `${wordCount} / ${userGoal}`;
-    
-    resetInactivityTimer();
+
+    if (wordCount >= userGoal) {
+        // Turn the left number green; keep the rest normal
+        wordCountDisplay.innerHTML = `<span style="color: #7CFC00;">${wordCount}</span> / ${userGoal}`;
+        completeButton.style.display = 'block';
+    } else {
+        // All normal text
+        wordCountDisplay.textContent = `${wordCount} / ${userGoal}`;
+    }
+
+    // If goal is not met, reset inactivity timer
+    if (wordCount < userGoal) {
+        resetInactivityTimer();
+    } else {
+        // Goal reached or exceeded: stop any timers, no auto-clear
+        clearTimeout(inactivityTimer);
+        clearInterval(colorInterval);
+    }
 }
 
-// Add event listener to update word count when user types
+// Add event listene to update word count when user types
 textarea.addEventListener('input', updateWordCount);
-
-// Timer variable for inactivity
-let inactivityTimer;
-let colorInterval;
-
-// Counter for color change progress
-let timeElapsed = 0;
 
 function clearTextAfterInactivity() {
     console.log('Clearing text due to inactivity');
@@ -39,11 +52,11 @@ function clearTextAfterInactivity() {
 function resetInactivityTimer() {
     clearTimeout(inactivityTimer); // Clear any existing timer
     clearInterval(colorInterval); // Stop any ongoing color change
-    startColorChange(); // Start changing the color
+    colorChange(); // Start changing the color
     inactivityTimer = setTimeout(clearTextAfterInactivity, idleTime * 1000); // Set a new 10-second timer
 }
 
-function startColorChange() {
+function colorChange() {
     timeElapsed = 0; // Reset time elapsed
 
     // Start the interval to change text color
