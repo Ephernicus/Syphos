@@ -5,6 +5,14 @@ const wordCountDisplay = document.getElementById('word-count');
 const userGoal = sessionStorage.getItem('goalWordCount') || '0';
 const idleTime = sessionStorage.getItem('idleTime') || 15;
 
+// ensures cursor stays in text area without needing to click 
+document.addEventListener('DOMContentLoaded', () => {
+    textarea.focus();
+});
+document.addEventListener('click', () => {
+    textarea.focus();
+});
+
 // Initialize word count
 let wordCount = 0;
 wordCountDisplay.textContent = `${wordCount} / ${userGoal}`;
@@ -63,7 +71,7 @@ function textFade() {
     fadeInterval = setInterval(() => {
         timeElapsed += 100; // Increment time elapsed by 100ms
         const progress = Math.min(timeElapsed / (idleTime * 1000), 1); // Progress from 0 to 1 over 10 seconds
-        const newOpacity = 1 - progress; 
+        const newOpacity = 1 - progress;
         textarea.style.opacity = newOpacity;
 
         if (progress === 1) {
@@ -71,3 +79,4 @@ function textFade() {
         }
     }, 100); // Update every 100ms
 }
+

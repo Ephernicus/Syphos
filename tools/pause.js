@@ -10,7 +10,7 @@ pauseButton.addEventListener('click', () => {
 
     // Stop the timers
     clearTimeout(inactivityTimer);
-    clearInterval(colorInterval);
+    clearInterval(fadeInterval);
 
     // Hide the writing elements˜
     textarea.style.display = 'none';

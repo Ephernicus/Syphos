@@ -66,11 +66,10 @@ textarea {
     border: none;
     outline: none;
     resize: none;
-    height: 80vh;
-    width: 80vh;
+    height: 30vh;
+    width: 120vh;
     font-size: 1.5rem;
     overflow: hidden;
-    z-index: 0;
 }
 
 /* Word count */
