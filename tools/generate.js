@@ -19,7 +19,7 @@ document.getElementById('generateButton').addEventListener('click', async () => 
                         },
                         {
                             "role": "user",
-                            "content": "Write a short and creative one sentence story prompt"
+                            "content": "Write a short and creative one sentence story prompt. max 100 characters"
                         }
                     ]
                 })

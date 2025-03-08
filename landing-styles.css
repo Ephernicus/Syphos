@@ -1,0 +1,47 @@
+/* Applies to entire website */
+* {
+    overflow: hidden;
+    font-family: "Afacad", serif;
+}
+
+/* Spacing of everything */
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+}
+
+/* Styles landing page buttons that lead to writing page */
+.landing-button {
+    transform-origin: center center;
+    transition: transform 0.2s ease;
+}
+
+.landing-button:hover {
+    transform: scale(1.1);
+}
+
+#mode-buttons,
+#selection-menu {
+    text-align: center;
+}
+
+#mode-buttons button,
+#beginButton {
+    margin: 10px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+#selection-menu input[type="range"],
+#goal-word-input {
+    margin: 10px 0;
+    width: 200px;
+}
+
+#selection-menu span {
+    font-weight: bold;
+}

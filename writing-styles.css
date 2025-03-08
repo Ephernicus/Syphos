@@ -19,27 +19,6 @@ body {
     font-family: inherit;
 }
 
-/* Alternate font options */
-#writing-page.font-1,
-#word-count.font-1 {
-    font-family: "Afacad", serif;
-}
-
-#writing-page.font-2,
-#word-count.font-2 {
-    font-family: "Times New Roman", serif;
-}
-
-#writing-page.font-3,
-#word-count.font-3 {
-    font-family: "Courier New", monospace;
-}
-
-#writing-page.font-4,
-#word-count.font-4 {
-    font-family: "Georgia", serif;
-}
-
 /* Header */
 header {
     position: fixed;
@@ -55,11 +34,6 @@ header {
     z-index: 1;
 }
 
-/* Initially hides the writing page */
-#writing-page {
-    display: block;
-}
-
 /* Textbox */
 textarea {
     background-color: transparent;
@@ -68,9 +42,41 @@ textarea {
     resize: none;
     height: 30vh;
     width: 120vh;
-    font-size: 1.5rem;
     overflow: hidden;
+    font-size: 1.5rem;
+    font-family: inherit;
 }
+
+
+
+/* Alternate font options */
+#writing-page.font-1,
+#word-count.font-1 {
+    font-family: "Afacad", serif;
+}
+
+#writing-page.font-2,
+#word-count.font-2 {
+    font-family: "Times New Roman", serif;
+}
+
+#writing-page.font-3,
+#word-count.font-3 {
+    font-family: "Consolas", monospace;
+    font-size: 0.5rem !important;
+}
+
+#writing-page.font-4,
+#word-count.font-4 {
+    font-family: "Arial", sans-serif;
+}
+
+
+/* Initially hides the writing page */
+#writing-page {
+    display: block;
+}
+
 
 /* Word count */
 #word-count {
@@ -78,39 +84,6 @@ textarea {
     bottom: 10px;
     text-align: center;
     padding: 10px;
-}
-
-/* Styles landing page buttons that lead to writing page */
-.landing-button {
-    transform-origin: center center;
-    transition: transform 0.2s ease;
-}
-
-.landing-button:hover {
-    transform: scale(1.1);
-}
-
-#mode-buttons,
-#selection-menu {
-    text-align: center;
-}
-
-#mode-buttons button,
-#beginButton {
-    margin: 10px;
-    padding: 10px 20px;
-    font-size: 16px;
-    cursor: pointer;
-}
-
-#selection-menu input[type="range"],
-#goal-word-input {
-    margin: 10px 0;
-    width: 200px;
-}
-
-#selection-menu span {
-    font-weight: bold;
 }
 
 
@@ -268,7 +241,7 @@ body.theme-3 .footer-button {
     width: 100%;
     height: 20%;
     background: transparent;
-    color: #ffffff;
+    color: inherit;
     display: none;
     z-index: 1000;
     display: flex;

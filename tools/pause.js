@@ -2,6 +2,7 @@ const pauseButton = document.getElementById('pauseButton');
 const continueButton = document.getElementById('continue-button');
 const restartButton = document.getElementById('restart-button');
 const pauseMenu = document.getElementById('pause-menu');
+const footer = document.getElementById('footer');
 
 
 // Pause writing when pause button is clicked
@@ -16,6 +17,7 @@ pauseButton.addEventListener('click', () => {
     textarea.style.display = 'none';
     wordCountDisplay.style.display = 'none';
     toolBar.style.display = 'none';
+    footer.style.display = 'none';
 
     // Show the pause menu
     pauseMenu.style.display = 'block';
@@ -37,6 +39,7 @@ continueButton.addEventListener('click', () => {
     textarea.style.display = 'block';
     wordCountDisplay.style.display = 'block';
     toolBar.style.display = 'flex';
+    footer.style.display = 'flex';
 
 
     // Resume the inactivity timer

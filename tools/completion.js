@@ -8,6 +8,7 @@ completeButton.addEventListener('click', () => {
     textarea.style.display = 'none';
     wordCountDisplay.style.display = 'none';
     toolBar.style.display = 'none';
+    footer.style.display = 'none';
 
     // Show the completion menu
     completionMenu.style.display = 'block';
@@ -20,6 +21,7 @@ resumeButton.addEventListener('click', () => {
     textarea.style.display = 'block';
     wordCountDisplay.style.display = 'block';
     toolBar.style.display = 'flex';
+    footer.style.display = 'flex';
 });
 
 // Export the text content as a .txt file 
