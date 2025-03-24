@@ -40,6 +40,6 @@ exportButton.addEventListener('click', () => {
 
 // Navigate to the landing page
 mainMenuButton.addEventListener('click', () => {
-    window.location.href = 'landing.html';
+    window.location.href = 'index.html';
 });
 

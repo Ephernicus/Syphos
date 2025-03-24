@@ -13,7 +13,7 @@ pauseButton.addEventListener('click', () => {
     clearTimeout(inactivityTimer);
     clearInterval(fadeInterval);
 
-    // Hide the writing elements˜
+    // Hide the writing elements
     textarea.style.display = 'none';
     wordCountDisplay.style.display = 'none';
     toolBar.style.display = 'none';
@@ -48,5 +48,5 @@ continueButton.addEventListener('click', () => {
 
 // Restart return to landing page 
 restartButton.addEventListener('click', () => {
-    window.location.href = 'landing.html';
+    window.location.href = 'index.html';
 });
