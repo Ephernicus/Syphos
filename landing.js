@@ -8,13 +8,15 @@ const goalInput = document.getElementById('goal-word-input');
 
 // Open selection menu
 landingButton.addEventListener('click', () => {
+    title.style.display = 'none';
     landingButton.style.display = 'none'; 
     selectionMenu.style.display = 'block'; 
 });
 
 // Selection menu back button
 backButton.addEventListener('click', () => {
-    selectionMenu.style.display = 'none';
+    selectionMenu.style.display = 'none'
+    title.style.display = 'flex';
     landingButton.style.display = 'block'; 
 });
 
