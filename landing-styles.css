@@ -10,6 +10,47 @@
     justify-content: center;
     font-size: 3rem;
     font-family: "Afacad", serif;
+    color: black;
+    cursor: pointer;
+    user-select: none; 
+    z-index: 1;
+    position: relative; 
+}
+
+/* Start text styles (hidden by default) */
+#start {
+    display: none;
+    justify-content: center;
+    position: absolute;
+    font-size: 3rem;
+    font-family: "Afacad", serif;
+    color: white;
+    animation: fade-in 0.5s ease-in-out; /* Fade-in animation */
+}
+
+/* Ensure spans don't interfere with pointer events */
+#title span {
+    pointer-events: none; 
+}
+
+/* Hover effect: Replace letters with "Start" */
+#title:hover span {
+    opacity: 0; 
+    pointer-events: none; 
+}
+
+/* Hover effect: Show "Start" and hide "Syphos" */
+#title:hover + #start {
+    display: flex; 
+    justify-content: center;
+    align-items: center;
+}
+
+/* Smooth transition for background color */
+html, body {
+    transition: background-color 0.2s ease-in-out; 
+    height: 100%; 
+    overflow: hidden;
 }
 
 /* Animation for fading out and in */
@@ -22,9 +63,19 @@
     }
 }
 
+/* Animation for fading in "Start" */
+@keyframes fade-in {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
 /* Animation to each letter */
 #title span {
-    animation: fade 7s infinite;
+    animation: fade 5s infinite;
     display: inline-block;
 }
 
@@ -91,3 +142,58 @@ body {
 }
 
 
+/* Style the slider track */
+input[type="range"] {
+    -webkit-appearance: none; /* Remove default styling */
+    appearance: none;
+    width: 100%; /* Full width */
+    height: 8px; /* Track height */
+    background: #ccc; /* Light gray track */
+    border-radius: 5px; /* Rounded edges */
+    outline: none; /* Remove focus outline */
+    transition: background 0.3s ease-in-out;
+}
+
+/* Style the slider thumb */
+input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none; 
+    appearance: none;
+    width: 20px; 
+    height: 60px; 
+    background: #666; 
+    cursor: pointer; 
+    transition: background 0.3s ease-in-out;
+}
+
+/* Change thumb color on hover */
+input[type="range"]::-webkit-slider-thumb:hover {
+    background: #444; 
+}
+/* Style the word count text box */
+#goal-word-input {
+    width: 50px;
+    font-size: 16px;
+    border: 1px solid #ccc; 
+    border-radius: 5px;
+    outline: none; 
+    text-align: center;
+    transition: border-color 0.3s ease-in-out; 
+}
+
+/* Remove the increase/decrease arrows for number inputs */
+#goal-word-input::-webkit-inner-spin-button,
+#goal-word-input::-webkit-outer-spin-button {
+    -webkit-appearance: none; 
+}
+
+/* Highlight the word count input box when invalid */
+#goal-word-input:invalid {
+    border-color: red;
+    box-shadow: 0 0 5px red;
+}
+
+/* Add focus effect */
+#goal-word-input:focus {
+    border-color: #666; 
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2); 
+}

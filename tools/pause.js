@@ -26,7 +26,7 @@ pauseButton.addEventListener('click', () => {
     const text = textarea.value.trim();
     const words = text.length > 0 ? text.split(/\s+/) : [];
     const currentWordCount = words.length;
-    pausedWordCount.textContent = `Current Word Count: ${currentWordCount}`;
+    pausedWordCount.textContent = `current word count: ${currentWordCount}`;
 
 });
 

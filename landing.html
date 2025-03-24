@@ -9,6 +9,8 @@
     <!-- Link to css file -->
     <link rel="stylesheet" href="landing-styles.css">
 
+    <link rel="icon" href="icons/shaded-s.png" type="image/png">
+
     <!-- Import google font -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -22,7 +24,7 @@
     </header>
     <!-- Landing page -->
     <div id="landing-page">
-        <div id="title">
+        <div id="title" role="button">
             <span>s</span>
             <span>y</span>
             <span>p</span>
@@ -30,25 +32,31 @@
             <span>o</span>
             <span>s</span>
         </div>
-        <button id="landingButton">Start</button>
+        <div id="start" role="button">
+            <span>s</span>
+            <span>t</span>
+            <span>a</span>
+            <span>r</span>
+            <span>t</span>
+        </div>
     </div>
 
     <!-- Selection menu -->
     <div id="selection-menu" style="display: none;">
-        <label for="idle-time-slider">Idle Time:</label>
+        <label for="idle-time-slider">idle time</label>
         <input type="range" id="idle-time-slider" min="5" max="60" value="15">
         <span id="idle-time-display">15</span> seconds
 
         <br><br>
 
-        <label for="goal-word-input">Goal Word Count:</label>
+        <label for="goal-word-input">goal word count</label>
         <input type="number" id="goal-word-input" required min="1" max="99999"
             oninput="if(this.value.length > 5) this.value = this.value.slice(0, 5);" />
 
         <br><br>
 
-        <button id="begin-button">Begin</button>
-        <button id="back-button">Back</button>
+        <button id="begin-button">begin</button>
+        <button id="back-button">back</button>
     </div>
 
     <!-- Link to javascript file -->

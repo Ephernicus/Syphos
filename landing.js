@@ -1,23 +1,33 @@
 // landing page constants
-const landingButton = document.getElementById('landingButton');
+const title = document.getElementById('title');
 const selectionMenu = document.getElementById('selection-menu');
 const backButton = document.getElementById('back-button');
 const writingStart = document.getElementById('begin-button');
 const hoverMessage = document.getElementById('hover-message');
 const goalInput = document.getElementById('goal-word-input');
+const body = document.body;
+
+// Add hover functionality to change the background color of the entire page
+title.addEventListener('mouseenter', () => {
+    body.style.backgroundColor = 'black';
+});
+
+title.addEventListener('mouseleave', () => {
+    body.style.backgroundColor = '';
+    title.style.color = 'black';
+});
 
 // Open selection menu
-landingButton.addEventListener('click', () => {
+title.addEventListener('click', () => {
+    body.style.backgroundColor = 'black';
     title.style.display = 'none';
-    landingButton.style.display = 'none'; 
-    selectionMenu.style.display = 'block'; 
+    selectionMenu.style.display = 'block';
 });
 
 // Selection menu back button
 backButton.addEventListener('click', () => {
     selectionMenu.style.display = 'none'
     title.style.display = 'flex';
-    landingButton.style.display = 'block'; 
 });
 
 // Select the slider and display elements
@@ -40,13 +50,22 @@ goalInput.addEventListener('input', function () {
 
 // Navigate to writing page
 writingStart.addEventListener('click', () => {
-    const idleTime = idleTimeSlider.value; // Get the slider value
-    sessionStorage.setItem('idleTime', idleTime);
+    if (!goalInput.value.trim()) {
+        goalInput.style.borderColor = 'red';
+        goalInput.style.boxShadow = '0 0 5px red';
+        event.preventDefault();
+    } else {
+        goalInput.style.borderColor = '';
+        goalInput.style.boxShadow = '';
 
-    const goal = goalInput.value.trim() || '0';
-    sessionStorage.setItem('goalWordCount', goal);
+        const idleTime = idleTimeSlider.value;
+        sessionStorage.setItem('idleTime', idleTime);
 
-    window.location.href = 'writing.html';
+        const goal = goalInput.value.trim() || '0';
+        sessionStorage.setItem('goalWordCount', goal);
+
+        window.location.href = 'writing.html';
+    }
 });
 
 
