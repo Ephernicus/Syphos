@@ -1,11 +1,14 @@
 ## SYPHOS - TODO
 
 Debug:
-- Menu buttons style
+- Menu buttons position 
+- Red highlight in word count selection menu
 - Font sizes vary between fonts
+- Auto page layout adjustment for diferent screens/devices 
 
 Features:
 - Pop up messages for using tools
+- Tracker for page visits 
 - Landing page option for users to set check points 
 - Add an about page 
 - Account/storage to store the files
