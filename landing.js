@@ -1,13 +1,10 @@
 // landing page constants
 const title = document.getElementById('title');
+const start = document.getElementById('start');
 const selectionMenu = document.getElementById('selection-menu');
 const backButton = document.getElementById('back-button');
 const aboutButton = document.getElementById('about-button');
 const writingStart = document.getElementById('begin-button');
-const githubLink = document.getElementById('github-button');
-const linkedinLink = document.getElementById('linkedin-button');
-const emailLink = document.getElementById('email-button');
-const hoverMessage = document.getElementById('hover-message');
 const goalInput = document.getElementById('goal-word-input');
 const body = document.body;
 
@@ -23,10 +20,10 @@ title.addEventListener('mouseleave', () => {
 
 // Open selection menu
 title.addEventListener('click', () => {
-    body.style.backgroundColor = 'black';
     selectionMenu.style.display = 'block';
     title.style.display = 'none';
     aboutButton.style.display = 'none';
+    start.style.display = 'none';
 });
 
 // Selection menu back button
@@ -34,6 +31,7 @@ backButton.addEventListener('click', () => {
     selectionMenu.style.display = 'none';
     title.style.display = 'flex';
     aboutButton.style.display = 'flex';
+    start.style.display = 'flex';
 });
 
 // Select the slider and display elements
@@ -79,13 +77,3 @@ aboutButton.addEventListener('click', () => {
     window.location.href = 'about.html';
 });
 
-githubLink.addEventListener('click', () => {
-    window.location.href = 'https://github.com/Ephernicus';
-});
-
-linkedinLink.addEventListener('click', () => {
-    window.location.href = 'https://www.linkedin.com/in/mjiu/';
-});
-emailLink.addEventListener('click', () => {
-    window.location.href = 'mailto:jiumaggie@gmail.com';
-});

@@ -8,7 +8,6 @@ Debug:
 
 Features:
 - Pop up messages for using tools
-- Tracker for page visits 
 - Landing page option for users to set check points 
 - Add an about page 
 - Account/storage to store the files

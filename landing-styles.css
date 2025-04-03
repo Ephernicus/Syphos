@@ -4,6 +4,12 @@
     font-family: "Afacad", serif;
 }
 
+#landing-page {
+    position: relative; 
+    overflow-x: visible;
+    overflow: visible;
+}
+
 /* Title container styles */
 #title {
     display: flex;
@@ -11,21 +17,31 @@
     font-size: 3rem;
     font-family: "Afacad", serif;
     color: black;
+    z-index: 1000;
     cursor: pointer;
     user-select: none; 
-    z-index: 1;
-    position: relative; 
+    position: absolute;
 }
 
 /* Start text styles (hidden by default) */
 #start {
-    display: none;
+    opacity: 100;
     justify-content: center;
     position: absolute;
     font-size: 3rem;
     font-family: "Afacad", serif;
     color: white;
     animation: fade-in 0.5s ease-in-out; /* Fade-in animation */
+}
+
+#title, #start {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#title:hover {
+    opacity: 0;
 }
 
 /* Ensure spans don't interfere with pointer events */
@@ -39,11 +55,9 @@
     pointer-events: none; 
 }
 
-/* Hover effect: Show "Start" and hide "Syphos" */
 #title:hover + #start {
-    display: flex; 
-    justify-content: center;
-    align-items: center;
+    opacity: 1; 
+    pointer-events: auto; 
 }
 
 /* Smooth transition for background color */
@@ -234,9 +248,7 @@ input[type="range"]::-webkit-slider-thumb:hover {
     background-image: url('icons/email.png');  
 }
 
-#github-button,
-#linkedin-button,
-#email-button {
+.about-button {
     width: 40px; 
     height: 40px; 
     background-size: contain; 
@@ -246,4 +258,21 @@ input[type="range"]::-webkit-slider-thumb:hover {
     opacity: 0.3; 
     cursor: pointer; 
     margin: 10px; 
+}
+
+.about-button:hover {
+    opacity: 0.6;
+}
+
+#about {
+    font-size: 1.2rem; 
+    margin: 0 auto;  
+    width: 50%;
+    height: 70%;
+    margin-top: 20px; 
+}
+
+#about-buttons {
+    margin-top: 20px;
+    text-align: center;
 }
