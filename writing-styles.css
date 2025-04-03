@@ -236,21 +236,13 @@ body.theme-3 .footer-button {
 
 
 /* Pause Menu */
-#pause-menu {
-    font-size: 1.5rem; /* Base font size for the entire pause menu */
-    transform: scale(1.2); /* Optional: Scale the entire menu */
-}
-
-#pause-menu * {
-    font-size: inherit; /* Ensure all child elements inherit the base font size */
-}
-
-/* Completion Menu */
+#pause-menu,
 #completion-menu {
-    font-size: 1.5rem; /* Base font size for the entire completion menu */
-    transform: scale(1.2); /* Optional: Scale the entire menu */
+    font-size: 1.2rem; 
+    display: flex;
+    text-align: center;
 }
-
+#pause-menu *,
 #completion-menu * {
     font-size: inherit; /* Ensure all child elements inherit the base font size */
 }
@@ -258,9 +250,11 @@ body.theme-3 .footer-button {
 /* Buttons in both menus */
 #pause-menu button,
 #completion-menu button {
-    padding: 1em 2em; /* Adjust button padding relative to font size */
-    font-size: 1em; /* Keep button font size proportional */
-    border-radius: 0.5em; /* Adjust border radius for larger buttons */
+    padding: 5px 10px; 
+    font-size: 1.2rem; 
+    border-radius: 5px;
+    border: none; 
+    margin: 5px;
     cursor: pointer;
 }
 

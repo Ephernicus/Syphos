@@ -1,4 +1,5 @@
 
+const aboutBackButton = document.getElementById('about-back-button');
 const githubLink = document.getElementById('github-button');
 const linkedinLink = document.getElementById('linkedin-button');
 const emailLink = document.getElementById('email-button');
@@ -15,3 +16,8 @@ linkedinLink.addEventListener('click', () => {
 emailLink.addEventListener('click', () => {
     window.location.href = 'mailto:jiumaggie@gmail.com';
 });
+
+aboutBackButton.addEventListener('click', () => {
+    window.location.href = 'index.html';
+});
+

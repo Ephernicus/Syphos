@@ -1,0 +1,71 @@
+/* About page styles */
+* {
+    overflow: hidden;
+    font-family: "Afacad", serif;
+}
+
+#about-page {
+    position: fixed; 
+    top: 35%;
+    align-items: center; 
+    justify-content: center; 
+}
+
+#github-button { 
+    background-image: url('icons/github.png');  
+}
+
+#linkedin-button { 
+    background-image: url('icons/linkedin.png');  
+}
+
+#email-button { 
+    background-image: url('icons/email.png');  
+}
+
+.about-button {
+    width: 35px; 
+    height: 35px; 
+    background-size: contain; 
+    background-position: center; 
+    border: none; 
+    background-color: transparent; 
+    opacity: 0.3; 
+    cursor: pointer; 
+    margin: 10px; 
+}
+
+.about-button:hover {
+    opacity: 0.6;
+}
+
+#about {
+    font-size: 1rem; 
+    margin: 0 auto;  
+    width: 50%;
+    height: 50%;
+    color: #555;
+}
+
+#about-buttons {
+    margin-top: 30px;
+    text-align: center;
+}
+
+#about-title {
+    display: flex;
+    justify-content: center;  
+    margin-bottom: 30px;
+}
+
+#about-back-button {
+    background-color: transparent; 
+    border: none; 
+    color: black; 
+    font-size: 2rem; 
+    cursor: pointer; 
+}
+
+#about-back-button:hover {
+    color: #888; 
+}

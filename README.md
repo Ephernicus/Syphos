@@ -1,8 +1,6 @@
 ## SYPHOS - TODO
 
 Debug:
-- Menu buttons position 
-- Red highlight in word count selection menu
 - Font sizes vary between fonts
 - Auto page layout adjustment for diferent screens/devices 
 

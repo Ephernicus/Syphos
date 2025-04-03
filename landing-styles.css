@@ -5,7 +5,7 @@
 }
 
 #landing-page {
-    position: relative; 
+    position: relative;
     overflow-x: visible;
     overflow: visible;
 }
@@ -19,7 +19,7 @@
     color: black;
     z-index: 1000;
     cursor: pointer;
-    user-select: none; 
+    user-select: none;
     position: absolute;
 }
 
@@ -31,10 +31,12 @@
     font-size: 3rem;
     font-family: "Afacad", serif;
     color: white;
-    animation: fade-in 0.5s ease-in-out; /* Fade-in animation */
+    animation: fade-in 0.5s ease-in-out;
+    /* Fade-in animation */
 }
 
-#title, #start {
+#title,
+#start {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
@@ -46,32 +48,36 @@
 
 /* Ensure spans don't interfere with pointer events */
 #title span {
-    pointer-events: none; 
+    pointer-events: none;
 }
 
 /* Hover effect: Replace letters with "Start" */
 #title:hover span {
-    opacity: 0; 
-    pointer-events: none; 
+    opacity: 0;
+    pointer-events: none;
 }
 
-#title:hover + #start {
-    opacity: 1; 
-    pointer-events: auto; 
+#title:hover+#start {
+    opacity: 1;
+    pointer-events: auto;
 }
 
 /* Smooth transition for background color */
-html, body {
-    transition: background-color 0.2s ease-in-out; 
-    height: 100%; 
+html,
+body {
+    transition: background-color 0.2s ease-in-out;
+    height: 100%;
     overflow: hidden;
 }
 
 /* Animation for fading out and in */
 @keyframes fade {
-    0%, 100% {
+
+    0%,
+    100% {
         opacity: 1;
     }
+
     50% {
         opacity: 0;
     }
@@ -82,6 +88,7 @@ html, body {
     0% {
         opacity: 0;
     }
+
     100% {
         opacity: 1;
     }
@@ -97,18 +104,23 @@ html, body {
 #title span:nth-child(1) {
     animation-delay: 0s;
 }
+
 #title span:nth-child(2) {
     animation-delay: 0.2s;
 }
+
 #title span:nth-child(3) {
     animation-delay: 0.4s;
 }
+
 #title span:nth-child(4) {
     animation-delay: 0.6s;
 }
+
 #title span:nth-child(5) {
     animation-delay: 0.8s;
 }
+
 #title span:nth-child(6) {
     animation-delay: 1s;
 }
@@ -119,7 +131,7 @@ body {
     align-items: center;
     justify-content: center;
     height: 100vh;
-    margin: 0;  
+    margin: 0;
 }
 
 /* Styles landing page buttons that lead to writing page */
@@ -135,19 +147,28 @@ body {
 #mode-buttons,
 #selection-menu {
     text-align: center;
+    transform: scale(1.1);
 }
 
-#mode-buttons button,
-#beginButton {
-    margin: 10px;
-    padding: 10px 20px;
-    font-size: 16px;
+.selection-button {
+    border: none;
+    font-size: 1rem;
     cursor: pointer;
+    padding: 5px 10px;
+    margin-left: 10px;
+    border-radius: 5px;
+    background-color: #eee;
+    transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+
+.selection-button:hover {
+    background-color: #ddd;
+    color: #333;
 }
 
 #selection-menu input[type="range"],
 #goal-word-input {
-    margin: 10px 0;
+    margin: 10px 5px;
     width: 200px;
 }
 
@@ -158,121 +179,71 @@ body {
 
 /* Style the slider track */
 input[type="range"] {
-    -webkit-appearance: none; /* Remove default styling */
+    -webkit-appearance: none;
+    /* Remove default styling */
     appearance: none;
-    width: 100%; /* Full width */
-    height: 8px; /* Track height */
-    background: #ccc; /* Light gray track */
-    border-radius: 5px; /* Rounded edges */
-    outline: none; /* Remove focus outline */
+    width: 100%;
+    /* Full width */
+    height: 10px;
+    /* Track height */
+    background: #ddd;
+    border-radius: 5px;
+    outline: none;
     transition: background 0.3s ease-in-out;
 }
 
 /* Style the slider thumb */
 input[type="range"]::-webkit-slider-thumb {
-    -webkit-appearance: none; 
+    -webkit-appearance: none;
     appearance: none;
-    width: 20px; 
-    height: 60px; 
-    background: #666; 
-    cursor: pointer; 
+    width: 20px;
+    height: 60px;
+    background: #888;
+    cursor: pointer;
     transition: background 0.3s ease-in-out;
 }
 
 /* Change thumb color on hover */
 input[type="range"]::-webkit-slider-thumb:hover {
-    background: #444; 
+    background: #666;
 }
+
 /* Style the word count text box */
 #goal-word-input {
     width: 50px;
     font-size: 16px;
-    border: 1px solid #ccc; 
+    border: 1px solid #ccc;
     border-radius: 5px;
-    outline: none; 
+    outline: none;
     text-align: center;
-    transition: border-color 0.3s ease-in-out; 
+    transition: border-color 0.3s ease-in-out;
 }
 
 /* Remove the increase/decrease arrows for number inputs */
 #goal-word-input::-webkit-inner-spin-button,
 #goal-word-input::-webkit-outer-spin-button {
-    -webkit-appearance: none; 
-}
-
-/* Highlight the word count input box when invalid */
-#goal-word-input:invalid {
-    border-color: red;
-    box-shadow: 0 0 5px red;
+    -webkit-appearance: none;
 }
 
 /* Add focus effect */
+#goal-word-input,
 #goal-word-input:focus {
-    border-color: #666; 
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2); 
+    border-color: #666;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
 }
 
 /* About page button */
 #about-button {
-    position: fixed;        
-    bottom: 20px;          
-    right: 20px;         
-    width: 35px;        
-    height: 35px;          
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 28px;
+    height: 28px;
     background-image: url('icons/about.png');
-    background-size: contain; 
+    background-size: contain;
     background-position: center;
-    border: none;        
+    border: none;
     background-color: transparent;
-    opacity: 0.3; 
-    cursor: pointer;     
-}
-
-/* About page styles */
-#about-page {
-    position: fixed; 
-    height: 50%; 
-    align-items: center; 
-    justify-content: center; 
-}
-
-#github-button { 
-    background-image: url('icons/github.png');  
-}
-
-#linkedin-button { 
-    background-image: url('icons/linkedin.png');  
-}
-
-#email-button { 
-    background-image: url('icons/email.png');  
-}
-
-.about-button {
-    width: 40px; 
-    height: 40px; 
-    background-size: contain; 
-    background-position: center; 
-    border: none; 
-    background-color: transparent; 
-    opacity: 0.3; 
-    cursor: pointer; 
-    margin: 10px; 
-}
-
-.about-button:hover {
-    opacity: 0.6;
-}
-
-#about {
-    font-size: 1.2rem; 
-    margin: 0 auto;  
-    width: 50%;
-    height: 70%;
-    margin-top: 20px; 
-}
-
-#about-buttons {
-    margin-top: 20px;
-    text-align: center;
+    opacity: 0.3;
+    cursor: pointer;
 }
